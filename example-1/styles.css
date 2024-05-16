@@ -1,0 +1,56 @@
+.icon:hover .animation-layer {
+    opacity: 1;
+    animation: dash 0.5s ease-in-out forwards;
+}
+.icon:hover .animation-out-layer {
+    opacity: 1;
+    animation: dash-2 0.5s ease-in-out forwards;
+}
+
+/* .animation-layer {
+    animation: dash $timing $easing forwards;
+    opacity: 1;
+}
+.animation-out-layer {
+    animation: dash-2 $timing $easing forwards;
+} */
+
+.icon .animation-layer {
+    stroke: #fff; //hsl(239, 16%, 63%);
+    animation: dash-out 0.5s ease-in-out forwards;
+}
+.icon .animation-out-layer {
+    opacity: 1;
+    transition: all;
+    transition-delay: 0s;
+    animation: dash-2-out 0.5s ease-in-out forwards;
+}
+
+body {
+    background: hsl(192, 37%, 60%);
+    padding: 50px;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dash-out {
+    from {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dash-2 {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dash-2-out {
+    from {
+        stroke-dashoffset: 0;
+    }
+}
