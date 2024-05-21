@@ -1,0 +1,23 @@
+.target {
+  position: fixed;
+  top: -2%;
+  left: -2%;
+  width: 104%;
+  height: 104%;
+
+  background-image: url(https://images.unsplash.com/photo-1715787803917-d25f112866fe?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+
+  --x-normal: calc(var(--x) * 2 - 1);
+  --y-normal: calc(var(--y) * 2 - 1);
+
+  --x-translate: calc(var(--x-normal) * -2vw);
+  --y-translate: calc(var(--y-normal) * -2vh);
+
+  --x-clippath: calc(var(--x) * 100% - var(--x-translate));
+  --y-clippath: calc(var(--y) * 100% - var(--y-translate));
+
+  transform: translate(var(--x-translate), var(--y-translate));
+  clip-path: ellipse(320px 320px at var(--x-clippath) var(--y-clippath));
+}
