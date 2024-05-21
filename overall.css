@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "Moderat";
+    font-style: normal;
+    font-weight: 400;
+    src: url("moderat.woff2") format("woff2");
+}
+
+:root {
+    --color-blue: #1e1f9f;
+    --color-beige: #f2cecf;
+}
+
+body {
+    background: hsl(192, 37%, 60%);
+    background: var(--color-blue);
+    font-family: "Moderat", sans-serif;
+    color: var(--color-beige);
+    padding: 0 50px;
+}
+.logo-visible path {
+    fill: var(--color-beige);
+}
+.mark path {
+    fill: var(--color-beige);
+}

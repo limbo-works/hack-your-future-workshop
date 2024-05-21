@@ -7,16 +7,8 @@
     animation: dash-2 0.5s ease-in-out forwards;
 }
 
-/* .animation-layer {
-    animation: dash $timing $easing forwards;
-    opacity: 1;
-}
-.animation-out-layer {
-    animation: dash-2 $timing $easing forwards;
-} */
-
 .icon .animation-layer {
-    stroke: #fff; //hsl(239, 16%, 63%);
+    stroke: #fff;
     animation: dash-out 0.5s ease-in-out forwards;
 }
 .icon .animation-out-layer {
@@ -25,14 +17,22 @@
     transition-delay: 0s;
     animation: dash-2-out 0.5s ease-in-out forwards;
 }
-
-body {
-    background: hsl(192, 37%, 60%);
-    padding: 50px;
+.svg-timeline {
+    z-index: -1;
+}
+.svg-timeline .animation-layer {
+    stroke: var(--color-blue);
+    animation: dash linear;
+    animation-timeline: scroll();
+}
+.svg-timeline .animation-out-layer {
+    animation: dash-2 linear;
+    animation-timeline: scroll();
 }
 
 @keyframes dash {
     to {
+        stroke: var(--color-beige);
         stroke-dashoffset: 0;
     }
 }
