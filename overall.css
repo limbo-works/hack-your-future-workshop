@@ -11,7 +11,6 @@
 }
 
 body {
-  background: hsl(192, 37%, 60%);
   background: var(--color-blue);
   font-family: "Moderat", sans-serif;
   color: var(--color-beige);
