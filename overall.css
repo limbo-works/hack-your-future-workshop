@@ -1,25 +1,52 @@
 @font-face {
-    font-family: "Moderat";
-    font-style: normal;
-    font-weight: 400;
-    src: url("moderat.woff2") format("woff2");
+  font-family: "Moderat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("moderat.woff2") format("woff2");
 }
 
 :root {
-    --color-blue: #1e1f9f;
-    --color-beige: #f2cecf;
+  --color-blue: #1e1f9f;
+  --color-beige: #f2cecf;
 }
 
 body {
-    background: hsl(192, 37%, 60%);
-    background: var(--color-blue);
-    font-family: "Moderat", sans-serif;
-    color: var(--color-beige);
-    padding: 0 50px;
+  background: hsl(192, 37%, 60%);
+  background: var(--color-blue);
+  font-family: "Moderat", sans-serif;
+  color: var(--color-beige);
+  padding: 0 50px;
 }
+
+body > header {
+  position: fixed;
+  top: 32px;
+  left: 48px;
+  z-index: 50;
+  width: calc(100% - 96px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body > header > div {
+  width: 132px;
+  aspect-ratio: 132 / 49;
+  background-image: url(./logo.svg);
+}
+
+body > header > a {
+  margin-top: 8px;
+  width: 30px;
+  aspect-ratio: 30 / 26;
+  background-image: url(./next.svg);
+}
+
 .logo-visible path {
-    fill: var(--color-beige);
+  fill: var(--color-beige);
 }
+
 .mark path {
-    fill: var(--color-beige);
+  fill: var(--color-beige);
 }
