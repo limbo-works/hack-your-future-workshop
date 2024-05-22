@@ -10,22 +10,21 @@
   background-position: center;
 }
 
-#target-2 > div:first-child {
+#target-2 .inner {
   clip-path: circle(50%);
 }
 
-#target-3 > div:first-child {
+#target-3 .inner {
   clip-path: xywh(20% 10% 70% 50%);
 }
 
-#target-4 > div:first-child {
+#target-4 .inner {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
 }
 
 /**
 Ignore everything below this line.
 **/
-
 .target {
   position: relative;
   width: 240px;

@@ -14,7 +14,7 @@ function updateModifier() {
   const target = document.querySelector(".target");
 
   /**
-   * Runs the lerp function multiple times,
+   * Runs the interpolate function multiple times,
    * based on how much the user has pulled the
    * range input. Getting one percent closer to
    * the goal each time.

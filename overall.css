@@ -37,9 +37,11 @@ body > header > div {
 
 body > header > a {
   margin-top: 8px;
-  width: 30px;
-  aspect-ratio: 30 / 26;
+  width: 132px;
+  aspect-ratio: 132 / 26;
   background-image: url(./next.svg);
+  background-position: right;
+  background-repeat: no-repeat;
 }
 
 .logo-visible path {
