@@ -1,37 +1,12 @@
-.svg-timeline {
-    z-index: -1;
-}
 .svg-timeline .animation-layer {
     stroke: var(--color-blue);
     animation: dash linear;
-    animation-timeline: scroll();
-}
-.svg-timeline .animation-out-layer {
-    animation: dash-2 linear;
     animation-timeline: scroll();
 }
 
 @keyframes dash {
     to {
         stroke: var(--color-beige);
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes dash-out {
-    from {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes dash-2 {
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes dash-2-out {
-    from {
         stroke-dashoffset: 0;
     }
 }

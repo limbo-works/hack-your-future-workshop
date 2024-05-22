@@ -1,107 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>2.3: Svg Stroke</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../overall.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="scripts.js"></script>
-  </head>
-  <body>
-    <header>
-      <div></div>
-      <a href="../2-4-svg-stroke-demo/index.html"></a>
-    </header>
+    <head>
+        <title>2.3: Svg Stroke</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="../overall.css" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <header>
+            <div></div>
+            <a href="../2-4-svg-stroke-demo/index.html"></a>
+        </header>
 
-    <div class="flex justify-center items-center flex-col mt-[30vh]">
-      <h1 class="text-[3em] font-bold">Animate on scroll</h1>
-      <p>How to Animate svg lines on scroll.</p>
+        <div
+            class="flex justify-center items-center flex-col mt-[30vh] relative z-10"
+        >
+            <h1 class="text-[3em] font-bold">Animate on scroll</h1>
+            <p>How to Animate svg lines on scroll.</p>
 
-      <div class="relative mt-[30vh] w-[40vw] ml-[48px]">
-        <h2>Text information</h2>
-        <p>
-          Mauris ultricies nisi nibh, at pretium ipsum porta rutrum.
-          Pellentesque imperdiet magna viverra enim imperdiet aliquam.
-          Vestibulum placerat sem et lorem malesuada lacinia. Aenean porttitor
-          feugiat semper. In sodales eleifend placerat. Nulla feugiat est nec
-          lorem consectetur sollicitudin. Sed orci ante, lobortis non varius a,
-          tristique at erat. Pellentesque gravida iaculis turpis vel porta.
-          Fusce maximus ullamcorper lectus, sed eleifend urna porta nec.
-          Vestibulum in risus eleifend, porttitor magna a, volutpat quam. Fusce
-          faucibus dignissim dignissim. Proin sit amet interdum neque.
-        </p>
-      </div>
-      <div class="relative mt-[30vh] w-[40vw] ml-[48px]">
-        <h2>Text information</h2>
-        <p>
-          Mauris ultricies nisi nibh, at pretium ipsum porta rutrum.
-          Pellentesque imperdiet magna viverra enim imperdiet aliquam.
-          Vestibulum placerat sem et lorem malesuada lacinia. Aenean porttitor
-          feugiat semper. In sodales eleifend placerat. Nulla feugiat est nec
-          lorem consectetur sollicitudin. Sed orci ante, lobortis non varius a,
-          tristique at erat. Pellentesque gravida iaculis turpis vel porta.
-          Fusce maximus ullamcorper lectus, sed eleifend urna porta nec.
-          Vestibulum in risus eleifend, porttitor magna a, volutpat quam. Fusce
-          faucibus dignissim dignissim. Proin sit amet interdum neque.
-        </p>
-      </div>
-      <div class="relative mt-[30vh] w-[40vw] ml-[48px]">
-        <h2>Text information</h2>
-        <p>
-          Mauris ultricies nisi nibh, at pretium ipsum porta rutrum.
-          Pellentesque imperdiet magna viverra enim imperdiet aliquam.
-          Vestibulum placerat sem et lorem malesuada lacinia. Aenean porttitor
-          feugiat semper. In sodales eleifend placerat. Nulla feugiat est nec
-          lorem consectetur sollicitudin. Sed orci ante, lobortis non varius a,
-          tristique at erat. Pellentesque gravida iaculis turpis vel porta.
-          Fusce maximus ullamcorper lectus, sed eleifend urna porta nec.
-          Vestibulum in risus eleifend, porttitor magna a, volutpat quam. Fusce
-          faucibus dignissim dignissim. Proin sit amet interdum neque.
-        </p>
-      </div>
-      <div class="relative mt-[30vh] w-[40vw] ml-[48px]">
-        <h2>Text information</h2>
-        <p>
-          Mauris ultricies nisi nibh, at pretium ipsum porta rutrum.
-          Pellentesque imperdiet magna viverra enim imperdiet aliquam.
-          Vestibulum placerat sem et lorem malesuada lacinia. Aenean porttitor
-          feugiat semper. In sodales eleifend placerat. Nulla feugiat est nec
-          lorem consectetur sollicitudin. Sed orci ante, lobortis non varius a,
-          tristique at erat. Pellentesque gravida iaculis turpis vel porta.
-          Fusce maximus ullamcorper lectus, sed eleifend urna porta nec.
-          Vestibulum in risus eleifend, porttitor magna a, volutpat quam. Fusce
-          faucibus dignissim dignissim. Proin sit amet interdum neque.
-        </p>
-      </div>
-      <div class="relative mt-[30vh] w-[40vw] ml-[48px]">
-        <h2>Text information</h2>
-        <p>
-          Mauris ultricies nisi nibh, at pretium ipsum porta rutrum.
-          Pellentesque imperdiet magna viverra enim imperdiet aliquam.
-          Vestibulum placerat sem et lorem malesuada lacinia. Aenean porttitor
-          feugiat semper. In sodales eleifend placerat. Nulla feugiat est nec
-          lorem consectetur sollicitudin. Sed orci ante, lobortis non varius a,
-          tristique at erat. Pellentesque gravida iaculis turpis vel porta.
-          Fusce maximus ullamcorper lectus, sed eleifend urna porta nec.
-          Vestibulum in risus eleifend, porttitor magna a, volutpat quam. Fusce
-          faucibus dignissim dignissim. Proin sit amet interdum neque.
-        </p>
-      </div>
-    </div>
-    <div class="w-auto h-screen fixed -z-1 top-0">
-      <svg
-        class="w-full h-full svg-timeline"
-        viewBox="0 0 786 576"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M773 20C714 169 595.551 44.0224 504 78C407 114 357 201 308 193C259 185 197 100 135 139C73 178 -3 141 37 95C77 49 126 206 95 222C49.1348 245.672 31 325 37 354C43 383 158 476 217 457C276 438 266 374 362 383C458 392 477 312 504 320C531 328 519.1 388.651 591 365C667 340 663 370 665 396C667 422 633 444 618 493C601.315 547.503 728 545 766 554"
-          class="animation-layer"
-          stroke-width="4"
-          stroke-linecap="round"
-        />
-      </svg>
-    </div>
-  </body>
+            <div class="relative mt-[30vh] w-[40vw] ml-[48px]">
+                <h2>Text information</h2>
+                <p>
+                    Mauris ultricies nisi nibh, at pretium ipsum porta rutrum.
+                    Pellentesque imperdiet magna viverra enim imperdiet aliquam.
+                    Vestibulum placerat sem et lorem malesuada lacinia. Aenean
+                    porttitor feugiat semper. In sodales eleifend placerat.
+                    Nulla feugiat est nec lorem consectetur sollicitudin. Sed
+                    orci ante, lobortis non varius a, tristique at erat.
+                    Pellentesque gravida iaculis turpis vel porta. Fusce maximus
+                    ullamcorper lectus, sed eleifend urna porta nec. Vestibulum
+                    in risus eleifend, porttitor magna a, volutpat quam. Fusce
+                    faucibus dignissim dignissim. Proin sit amet interdum neque.
+                </p>
+            </div>
+            <div class="relative mt-[30vh] w-[40vw] ml-[48px]">
+                <h2>Text information</h2>
+                <p>
+                    Mauris ultricies nisi nibh, at pretium ipsum porta rutrum.
+                    Pellentesque imperdiet magna viverra enim imperdiet aliquam.
+                    Vestibulum placerat sem et lorem malesuada lacinia. Aenean
+                    porttitor feugiat semper. In sodales eleifend placerat.
+                    Nulla feugiat est nec lorem consectetur sollicitudin. Sed
+                    orci ante, lobortis non varius a, tristique at erat.
+                    Pellentesque gravida iaculis turpis vel porta. Fusce maximus
+                    ullamcorper lectus, sed eleifend urna porta nec. Vestibulum
+                    in risus eleifend, porttitor magna a, volutpat quam. Fusce
+                    faucibus dignissim dignissim. Proin sit amet interdum neque.
+                </p>
+            </div>
+            <div class="relative mt-[30vh] w-[40vw] ml-[48px]">
+                <h2>Text information</h2>
+                <p>
+                    Mauris ultricies nisi nibh, at pretium ipsum porta rutrum.
+                    Pellentesque imperdiet magna viverra enim imperdiet aliquam.
+                    Vestibulum placerat sem et lorem malesuada lacinia. Aenean
+                    porttitor feugiat semper. In sodales eleifend placerat.
+                    Nulla feugiat est nec lorem consectetur sollicitudin. Sed
+                    orci ante, lobortis non varius a, tristique at erat.
+                    Pellentesque gravida iaculis turpis vel porta. Fusce maximus
+                    ullamcorper lectus, sed eleifend urna porta nec. Vestibulum
+                    in risus eleifend, porttitor magna a, volutpat quam. Fusce
+                    faucibus dignissim dignissim. Proin sit amet interdum neque.
+                </p>
+            </div>
+            <div class="relative mt-[30vh] w-[40vw] ml-[48px]">
+                <h2>Text information</h2>
+                <p>
+                    Mauris ultricies nisi nibh, at pretium ipsum porta rutrum.
+                    Pellentesque imperdiet magna viverra enim imperdiet aliquam.
+                    Vestibulum placerat sem et lorem malesuada lacinia. Aenean
+                    porttitor feugiat semper. In sodales eleifend placerat.
+                    Nulla feugiat est nec lorem consectetur sollicitudin. Sed
+                    orci ante, lobortis non varius a, tristique at erat.
+                    Pellentesque gravida iaculis turpis vel porta. Fusce maximus
+                    ullamcorper lectus, sed eleifend urna porta nec. Vestibulum
+                    in risus eleifend, porttitor magna a, volutpat quam. Fusce
+                    faucibus dignissim dignissim. Proin sit amet interdum neque.
+                </p>
+            </div>
+            <div class="relative mt-[30vh] w-[40vw] ml-[48px]">
+                <h2>Text information</h2>
+                <p>
+                    Mauris ultricies nisi nibh, at pretium ipsum porta rutrum.
+                    Pellentesque imperdiet magna viverra enim imperdiet aliquam.
+                    Vestibulum placerat sem et lorem malesuada lacinia. Aenean
+                    porttitor feugiat semper. In sodales eleifend placerat.
+                    Nulla feugiat est nec lorem consectetur sollicitudin. Sed
+                    orci ante, lobortis non varius a, tristique at erat.
+                    Pellentesque gravida iaculis turpis vel porta. Fusce maximus
+                    ullamcorper lectus, sed eleifend urna porta nec. Vestibulum
+                    in risus eleifend, porttitor magna a, volutpat quam. Fusce
+                    faucibus dignissim dignissim. Proin sit amet interdum neque.
+                </p>
+            </div>
+        </div>
+        <div class="w-auto h-screen fixed -z-1 top-0">
+            <svg
+                class="w-full h-full svg-timeline"
+                viewBox="0 0 786 576"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M773 20C714 169 595.551 44.0224 504 78C407 114 357 201 308 193C259 185 197 100 135 139C73 178 -3 141 37 95C77 49 126 206 95 222C49.1348 245.672 31 325 37 354C43 383 158 476 217 457C276 438 266 374 362 383C458 392 477 312 504 320C531 328 519.1 388.651 591 365C667 340 663 370 665 396C667 422 633 444 618 493C601.315 547.503 728 545 766 554"
+                    class="animation-layer"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                />
+            </svg>
+        </div>
+    </body>
 </html>
