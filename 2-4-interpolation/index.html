@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2.4: Interpolation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../overall.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <header>
+      <div></div>
+      <a href="../2-5-clippath-mouse/index.html"></a>
+    </header>
+
+    <div
+      class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-32 w-[50vw]"
+    >
+      <div class="timeline">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="target">
+        <div></div>
+      </div>
+
+      <input
+        id="range"
+        type="range"
+        min="0"
+        step="1"
+        value="0"
+        max="400"
+        oninput="updateModifier()"
+        class="w-[200px] mx-auto"
+      />
+    </div>
+  </body>
+</html>

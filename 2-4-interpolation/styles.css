@@ -1,0 +1,21 @@
+.timeline,
+.target {
+  position: relative;
+
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-beige);
+}
+
+.timeline div,
+.target div {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--p, 0) * 100%);
+  transform: translate(calc(var(--p, 0) * -100%), -50%);
+
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-beige);
+  border-radius: 8px;
+}

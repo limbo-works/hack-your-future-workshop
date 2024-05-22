@@ -7,12 +7,12 @@ let last = 0;
 /**
  * https://en.wikipedia.org/wiki/Linear_interpolation
  */
-function lerp(v0, v1, t) {
+function interpolate(v0, v1, t) {
   return (1 - t) * v0 + t * v1;
 }
 
 /**
- * Animation loop, see example: ...
+ * Animation loop, see example: 2-3-loop
  */
 function animate(now) {
   window.requestAnimationFrame(animate);
@@ -29,10 +29,10 @@ function animate(now) {
    * Interpolates xActual and yActual towards xTarget and yTarget,
    * taking the delta value into account.
    *
-   * See example: ...
+   * See example: 2-4-interpolation
    */
-  xActual = lerp(xActual, xTarget, 0.1 * delta);
-  yActual = lerp(yActual, yTarget, 0.1 * delta);
+  xActual = interpolate(xActual, xTarget, 0.05 * delta);
+  yActual = interpolate(yActual, yTarget, 0.05 * delta);
 
   /**
    * Sets xActual and yActual as CSS variables.
