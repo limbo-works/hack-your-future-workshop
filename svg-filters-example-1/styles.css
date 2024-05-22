@@ -1,0 +1,32 @@
+body {
+    cursor: none;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: var(--color-beige);
+    translate: var(--x) var(--y);
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    pointer-events: none;
+    grid-area: 1 / 1;
+    transition: scale 0.5s ease-in-out;
+}
+.big-circle {
+    border-radius: 50%;
+    background-color: var(--color-beige);
+}
+.square {
+    place-content: center;
+    place-items: center;
+}
+.circle {
+}
+.big-circle {
+    grid-area: 1 / 1;
+}
+.square:hover .circle {
+    scale: 1.5;
+    transition: scale 0.5s ease-in-out;
+}
