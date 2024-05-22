@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2.4: Svg Stroke Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../overall.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <header>
+      <div></div>
+      <a href="../3-1-css-filters/index.html"></a>
+    </header>
+    <div class="flex justify-center items-center flex-col h-[80vh]">
+      <div class="w-[100%] h-[200px]">
+        <svg
+          viewBox="0 0 780 265"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="demo"
+          id="demo"
+          style="--dash-array: 832.588; --dash-offset: 832.588"
+        >
+          <path
+            d="M16 132C69.7444 64.8385 217.767 -29.1876 379.901
+                    132C542.035 293.188 688.856 199.161 742 132"
+            style="
+              stroke: var(--color-beige);
+              stroke-dasharray: var(--dash-array);
+              stroke-dashoffset: var(--dash-offset);
+            "
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+      <div class="flex gap-[200px]">
+        <div>
+          dash-offset<br /><input
+            id="dash-offset"
+            type="range"
+            min="0"
+            step="1"
+            value="832"
+            max="832"
+            oninput="updateDashOffset()"
+          />
+        </div>
+        <div>
+          dash-array<br /><input
+            id="dash-array"
+            type="range"
+            min="0"
+            step="1"
+            value="832"
+            max="832"
+            oninput="updateDashArray()"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

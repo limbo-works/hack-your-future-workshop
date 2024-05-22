@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2.2: Svg Stroke</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../overall.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <header>
+      <div></div>
+      <a href="../2-3-svg-stroke/index.html"></a>
+    </header>
+
+    <div class="flex justify-center items-center flex-col mt-[20vh]">
+      <h1 class="text-[3em] font-bold">Animate on Hover</h1>
+      <p>How to Animate svg lines on hover.</p>
+
+      <div class="w-[200px] h-[200px]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 113 113"
+          svg-inline=""
+          role="presentation"
+          focusable="false"
+          tabindex="-1"
+          aria-hidden="true"
+          class="icon"
+        >
+          <path
+            fill="none"
+            style="stroke: var(--color-beige)"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M34.2 96.7V68H26l37.8-37.8 37.6 37.6-9 .2v28.7"
+            class="animation-out-layer"
+          ></path>
+          <path
+            fill="none"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M34.2 96.7V68H26l37.8-37.8 37.6 37.6-9 .2v28.7"
+            class="animation-layer"
+          ></path>
+          <path
+            fill="none"
+            style="stroke: var(--color-beige)"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M55.4 96.7V77H72v19.7"
+          ></path>
+          <path
+            style="fill: var(--color-beige)"
+            fill="hsl(239, 16%, 33%)"
+            d="M91.3 50.6l-2-2 .1-18h-12V37l-2-2v-5.4c0-.6.4-1 1-1h14c.3 0 .5.1.7.3.2.2.3.4.3.7l-.1 21z"
+            class="st1"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>

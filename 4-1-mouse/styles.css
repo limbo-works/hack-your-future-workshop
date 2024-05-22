@@ -7,9 +7,5 @@
   border-radius: 32px;
   background-color: var(--color-beige);
 
-  transform: translate(
-      calc(var(--x) * 100vw - 50%),
-      calc(var(--y) * 100vh - 50%)
-    )
-    rotate(20deg);
+  transform: translate(calc(var(--x) - 50%), calc(var(--y) - 50%));
 }
