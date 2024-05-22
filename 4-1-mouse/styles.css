@@ -2,18 +2,18 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 128px;
-  height: 128px;
-  border-radius: 32px;
+  width: 256px;
+  height: 256px;
+  border-radius: 128px;
   background-color: var(--color-beige);
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
 
   /**
     Moves the element to the cursor position,
     using the css variables we set through the
     script file.
   */
-
-  transform: translate(calc(var(--x) - 50%), calc(var(--y) - 50%));
-
-  /* transform: translate(var(--x), var(--y)); */
+  top: var(--y);
+  left: var(--x);
 }
