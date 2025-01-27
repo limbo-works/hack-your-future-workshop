@@ -1,1 +1,1 @@
-# hack-your-future-workshop
+# Hack Your Future

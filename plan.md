@@ -1,0 +1,10 @@
+- Intro (Aske)
+- Clippath (Aske)
+- Css Filters (Tobi) \*TOBI
+- Keyframes + Hover things (+ things from iuno workshop) (Tobi) \*WØLK+TOBI
+- Svg Masks (Aske) \*ASKE
+- Svg Filters (Aske) \*ASKE
+- Svg Stroke (Tobi) \*TOBI
+- Simple JS css-variables + follow (Tobi) \*TOBI
+- Split Text Animation (Tobi) \*TOBI+WØLK
+- Css Perspective & 3d transforms + skew, if you're craazy (Aske) \*ASKE

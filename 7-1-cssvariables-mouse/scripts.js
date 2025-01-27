@@ -5,7 +5,7 @@
  *
  * https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
  */
-window.addEventListener("mousemove", function ({ clientX, clientY }) {
-  document.body.style.setProperty("--x", clientX + "px");
-  document.body.style.setProperty("--y", clientY + "px");
+window.addEventListener("mousemove", function (event) {
+  document.body.style.setProperty("--x", event.clientX + "px");
+  document.body.style.setProperty("--y", event.clientY + "px");
 });
