@@ -5,6 +5,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../overall.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <header>
@@ -12,6 +13,17 @@
       <a href="../4-1-mouse/index.html"></a>
     </header>
 
-    <div><!-- Content here --></div>
+    <div>
+      <div class="flex justify-center items-center flex-col mt-[20vh]">
+        <h1 class="text-[3em] font-bold">Split text animation</h1>
+        <p class="mb-4">
+          How to split text and animate individually, together.
+        </p>
+        <div class="flex flex-col gap-y-2 items-center">
+          <div id="target-1" class="target text-[2em] w-fit">Transform</div>
+          <div id="target-2" class="target text-[2em] w-fit">Color</div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
