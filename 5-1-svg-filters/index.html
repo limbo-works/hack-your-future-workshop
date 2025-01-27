@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>5.1: Svg Filters</title>
+    <title>3.1: CSS Filters</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../overall.css" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="scripts.js"></script>
   </head>
   <body>
     <header>
       <div></div>
+      <a href="../5-2-svg-filters/index.html"></a>
     </header>
 
     <div
-      class="outer-square flex justify-center items-center flex-col h-[80vh]"
+      class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px]"
     >
-      <div class="circle w-[100px] h-[100px]"></div>
-      <div class="square w-400 h-400 border-primary-text grid">
-        <div class="big-circle w-[320px] h-[320px]"></div>
-      </div>
+      <!-- This is the cool stuff. -->
+      <svg viewBox="0 0 1000 1000">
+        <circle cx="250" cy="500" r="250" fill="var(--color-beige)" />
+        <circle cx="750" cy="500" r="250" fill="var(--color-beige)" />
+      </svg>
     </div>
-    <svg class="hidden">
-      <defs>
-        <filter id="filter" x="0" y="0" width="100%" height="100%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-          <feColorMatrix
-            in="blur"
-            mode="matrix"
-            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-            result="goo"
-          />
-        </filter>
-      </defs>
-    </svg>
   </body>
 </html>
