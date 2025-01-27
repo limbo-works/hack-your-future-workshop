@@ -1,0 +1,56 @@
+<!-- General Tutorial: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Filter_effects -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3.1: CSS Filters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../overall.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div></div>
+      <a href="../5-5-svg-filters/index.html"></a>
+    </header>
+
+    <div
+      class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1600px]"
+    >
+      <!-- This is the cool stuff. -->
+      <svg viewBox="0 0 4000 4000">
+        <filter id="filter">
+          <!-- Gaussian Blur Docs: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feGaussianBlur -->
+          <feGaussianBlur in="SourceGraphic" out="blur" stdDeviation="80" />
+
+          <!-- Color Matrix Docs: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feColorMatrix -->
+          <feColorMatrix
+            in="blur"
+            out="sharpened"
+            type="matrix"
+            values="
+              1 0 0 0 0
+              0 1 0 0 0
+              0 0 1 0 0
+              0 0 0 100 -50
+            "
+          />
+        </filter>
+
+        <g filter="url(#filter)">
+          <circle cx="2000" cy="2000" r="250" fill="var(--color-beige)" />
+
+          <circle
+            cx="2000"
+            cy="2000"
+            r="250"
+            fill="var(--color-beige)"
+            id="target"
+          />
+        </g>
+      </svg>
+    </div>
+  </body>
+</html>
