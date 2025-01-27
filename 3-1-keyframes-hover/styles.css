@@ -1,0 +1,128 @@
+/* Button Hover Transition */
+.button {
+  position: relative;
+  overflow: clip;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: 1px solid var(--color-beige);
+  transition: all 0.2s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.button .button__text {
+  transition: all 0.8s 0.1s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.button .button__text-second {
+  isolation: isolate;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+  transform: translateY(30%);
+  transition: all 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.button .button__background,
+.button .button__background::before,
+.button .button__background::after {
+  position: absolute;
+  transform: translateY(100%);
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 9999px;
+  background-color: var(--color-beige);
+  transition: all 0.5s cubic-bezier(0.83, 0, 0.17, 1) 0.2s;
+}
+
+.button .button__background::before {
+  content: '';
+  transition-delay: 0.1s;
+  background-color: var(--color-blue);
+}
+
+.button .button__background::after {
+  content: '';
+  background-color: var(--color-beige);
+  transition-delay: 0s;
+}
+
+.button:hover .button__text {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.button .button__text-second {
+  transition-duration: 0.6s;
+}
+
+.button:hover .button__text-second {
+  top: 10px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 0.5s;
+  transition-delay: 0.3s;
+  color: var(--color-blue);
+}
+
+.button:hover .button__background {
+  transform: translateY(0);
+}
+
+.button:hover .button__background::before {
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.button:hover .button__background::after {
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+/* Keyframe Animation */
+.animation-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--color-beige);
+  box-sizing: border-box;
+}
+
+.animation-container__block {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: var(--color-beige);
+  border-radius: 50px;
+  animation: move 4s infinite cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+@keyframes move {
+  0% {
+    top: 10px;
+    left: 10px;
+  }
+  25% {
+    top: 10px;
+    left: 110px;
+  }
+  50% {
+    top: 110px;
+    left: 110px;
+  }
+  75% {
+    top: 110px;
+    left: 10px;
+  }
+  100% {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+.animation-container:hover .animation-container__block {
+  animation-play-state: paused;
+}
