@@ -9,9 +9,35 @@
   <body>
     <header>
       <div></div>
-      <a href="../4-1-mouse/index.html"></a>
+      <a href="../5-1-svg-filters/index.html"></a>
     </header>
 
-    <div><!-- Content here --></div>
+    <div
+      class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-[64px]"
+    >
+      <div id="target-1" class="target">
+        <div class="inner"></div>
+        <div></div>
+        <span>Regular</span>
+      </div>
+
+      <div id="target-2" class="target">
+        <div class="inner"></div>
+        <div></div>
+        <span>Circle mask:<br />circle(50%)</span>
+      </div>
+
+      <div id="target-3" class="target">
+        <div class="inner"></div>
+        <div></div>
+        <span>clip-path:<br />xywh(20% 10% 70% 50%)</span>
+      </div>
+
+      <div id="target-4" class="target">
+        <div class="inner"></div>
+        <div></div>
+        <span>clip-path:<br />polygon(0 0, 100% 0, 100% 100%, 0 50%)</span>
+      </div>
+    </div>
   </body>
 </html>

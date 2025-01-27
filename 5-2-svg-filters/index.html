@@ -9,7 +9,7 @@
   <body>
     <header>
       <div></div>
-      <a href="../5-2-svg-filters/index.html"></a>
+      <a href="../5-3-svg-filters/index.html"></a>
     </header>
 
     <div
@@ -17,8 +17,14 @@
     >
       <!-- This is the cool stuff. -->
       <svg viewBox="0 0 1000 1000">
-        <circle cx="250" cy="500" r="250" fill="var(--color-beige)" />
-        <circle cx="750" cy="500" r="250" fill="var(--color-beige)" />
+        <filter id="filter">
+          <feGaussianBlur in="SourceGraphic" out="blur" stdDeviation="40" />
+        </filter>
+
+        <g filter="url(#filter)">
+          <circle cx="250" cy="500" r="250" fill="var(--color-beige)" />
+          <circle cx="750" cy="500" r="250" fill="var(--color-beige)" />
+        </g>
       </svg>
     </div>
   </body>

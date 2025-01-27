@@ -1,43 +1,26 @@
-.icon:hover .animation-layer {
-    opacity: 1;
-    animation: dash 0.5s ease-in-out forwards;
+.hack-mark {
+    opacity: 0;
 }
-.icon:hover .animation-out-layer {
+.hack-mark.active {
     opacity: 1;
-    animation: dash-2 0.5s ease-in-out forwards;
+}
+.hack-mark .animation-layer {
+    stroke: var(--color-beige);
+}
+.hack-mark.active .animation-layer {
+    opacity: 1;
+    animation: dash 1.9s ease-in-out forwards;
 }
 
-.icon .animation-layer {
-    stroke: #6c98ee;
-    animation: dash-out 0.5s ease-in-out forwards;
+.hack-mark.active .layer-2.animation-layer {
+    animation-delay: 1.8s;
 }
-.icon .animation-out-layer {
-    opacity: 1;
-    transition: all;
-    transition-delay: 0s;
-    animation: dash-2-out 0.5s ease-in-out forwards;
+.hack-mark .layer-2.animation-layer {
+    animation-delay: 0s;
 }
 
 @keyframes dash {
     to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes dash-out {
-    from {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes dash-2 {
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes dash-2-out {
-    from {
         stroke-dashoffset: 0;
     }
 }

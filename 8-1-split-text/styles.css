@@ -1,0 +1,61 @@
+#target-1 {
+  span {
+    display: inline-block;
+    transition: all 0.3s calc(var(--index) * 0.05s) ease-in-out;
+  }
+}
+
+#target-1:hover {
+  span {
+    animation: anim-transform 0.5s calc(var(--index) * 0.05s) ease-in-out
+      forwards;
+  }
+}
+
+@keyframes anim-transform {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-15%);
+  }
+
+  50% {
+    transform: translateY(15%);
+  }
+}
+
+#target-2 {
+  span {
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    background-color: var(--color-blue);
+    color: var(--color-beige);
+  }
+}
+
+#target-2:hover {
+  span {
+    animation: anim-color 1s calc(var(--index) * 0.05s) ease-in-out forwards;
+  }
+}
+
+@keyframes anim-color {
+  0% {
+    background-color: var(--color-blue);
+    color: var(--color-beige);
+  }
+  50% {
+    background-color: var(--color-beige);
+    color: var(--color-blue);
+  }
+  25%,
+  50%,
+  75% {
+    padding: 4px 8px;
+    margin-inline: 2px;
+  }
+}

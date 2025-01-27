@@ -1,24 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     const animateIn = document.querySelectorAll(".animation-layer");
-    const animateOut = document.querySelectorAll(".animation-out-layer");
 
-    // set values on animateIn layers
+    // get the total length of the paths and set the stroke-dasharray and stroke-dashoffset
     for (var item of animateIn) {
         if (item.getTotalLength) {
             item.style.strokeDasharray = item.getTotalLength();
             item.style.strokeDashoffset = item.getTotalLength();
         }
     }
-    // set values on animateOut layers
-
-    for (var layer of animateOut) {
-        if (layer.getTotalLength) {
-            layer.style.strokeDasharray =
-                "0," +
-                layer.getTotalLength() +
-                " " +
-                2 * layer.getTotalLength();
-            layer.style.strokeDashoffset = layer.getTotalLength();
-        }
-    }
+    // set timeout to only show mark after stroke is set
+    setTimeout(() => {
+        document.querySelector(".hack-mark").classList.add("active");
+    }, 1900);
 });
