@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>5.1: Svg Filters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../overall.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <header>
+      <div></div>
+    </header>
+
+    <div
+      class="outer-square flex justify-center items-center flex-col h-[80vh]"
+    >
+      <div class="circle w-[100px] h-[100px]"></div>
+      <div class="square w-400 h-400 border-primary-text grid">
+        <div class="big-circle w-[320px] h-[320px]"></div>
+      </div>
+    </div>
+    <svg class="hidden">
+      <defs>
+        <filter id="filter" x="0" y="0" width="100%" height="100%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+            result="goo"
+          />
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!-- General Tutorial: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Filter_effects -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3.1: CSS Filters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../overall.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div></div>
+      <a href="../6-1-svg-stroke/index.html"></a>
+    </header>
+
+    <div
+      class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw]"
+    >
+      <!-- This is the cool stuff. -->
+      <svg viewBox="-125 -125 3000 750">
+        <filter id="filter-1">
+          <feGaussianBlur stdDeviation="30" />
+        </filter>
+
+        <filter id="filter-2">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="15" result="blur" />
+          <feOffset in="blur" dx="20" dy="30" result="offsetBlur">
+            <animate
+              attributeName="dx"
+              from="30"
+              to="-30"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </feOffset>
+
+          <!-- litPaint -->
+          <feSpecularLighting
+            in="blur"
+            surfaceScale="5"
+            specularConstant=".8"
+            specularExponent="30"
+            lighting-color="#eee"
+            result="specOut"
+          >
+            <fePointLight x="-2500" y="-5000" z="10000">
+              <animate
+                attributeName="x"
+                from="-5000"
+                to="5000"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </fePointLight>
+          </feSpecularLighting>
+
+          <feComposite
+            in="specOut"
+            in2="SourceAlpha"
+            operator="in"
+            result="specOut"
+          />
+
+          <feComposite
+            in="SourceGraphic"
+            in2="specOut"
+            operator="arithmetic"
+            k1="0"
+            k2="1"
+            k3="1"
+            k4="0"
+            result="litPaint"
+          />
+
+          <!-- merge offsetBlur + litPaint -->
+          <feMerge>
+            <feMergeNode in="offsetBlur" />
+            <feMergeNode in="litPaint" />
+          </feMerge>
+        </filter>
+
+        <filter id="filter-3">
+          <feTurbulence
+            type="turbulence"
+            baseFrequency="0.025"
+            numOctaves="5"
+            result="turbulence"
+          />
+
+          <feColorMatrix
+            in="turbulence"
+            type="hueRotate"
+            values="0"
+            result="shifted"
+          >
+            <animate
+              attributeName="values"
+              from="0"
+              to="360"
+              dur="5s"
+              repeatCount="indefinite"
+            />
+          </feColorMatrix>
+
+          <feDisplacementMap
+            in2="shifted"
+            in="SourceGraphic"
+            scale="100"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+
+        <g>
+          <circle cx="250" cy="250" r="250" fill="var(--color-beige)" />
+        </g>
+
+        <g filter="url(#filter-1)">
+          <circle cx="1000" cy="250" r="250" fill="var(--color-beige)" />
+        </g>
+
+        <g filter="url(#filter-2)">
+          <circle cx="1750" cy="250" r="250" fill="var(--color-beige)" />
+        </g>
+
+        <g filter="url(#filter-3)">
+          <circle cx="2500" cy="250" r="250" fill="var(--color-beige)" />
+        </g>
+      </svg>
+    </div>
+  </body>
+</html>

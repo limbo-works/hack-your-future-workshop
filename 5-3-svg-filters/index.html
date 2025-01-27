@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3.1: CSS Filters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../overall.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div></div>
+      <a href="../5-4-svg-filters/index.html"></a>
+    </header>
+
+    <div
+      class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px]"
+    >
+      <!-- This is the cool stuff. -->
+      <svg viewBox="0 0 1000 1000">
+        <filter id="filter">
+          <feGaussianBlur in="SourceGraphic" out="blur" stdDeviation="80" />
+
+          <feColorMatrix
+            in="blur"
+            out="sharpened"
+            type="matrix"
+            values="
+              1 0 0 0 0
+              0 1 0 0 0
+              0 0 1 0 0
+              0 0 0 100 -50
+            "
+          />
+        </filter>
+
+        <g filter="url(#filter)">
+          <circle cx="250" cy="500" r="250" fill="var(--color-beige)" />
+          <circle cx="750" cy="500" r="250" fill="var(--color-beige)" />
+        </g>
+      </svg>
+    </div>
+  </body>
+</html>
