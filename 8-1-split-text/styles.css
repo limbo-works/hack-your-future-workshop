@@ -1,7 +1,6 @@
 #target-1 {
   span {
     display: inline-block;
-    transition: all 0.3s calc(var(--index) * 0.05s) ease-in-out;
   }
 }
 
@@ -19,43 +18,64 @@
   }
 
   25% {
-    transform: translateY(-15%);
+    transform: translateY(-10%);
   }
 
   50% {
-    transform: translateY(15%);
+    transform: translateY(10%);
   }
 }
 
 #target-2 {
   span {
     display: inline-block;
-    text-transform: uppercase;
     border-radius: 9999px;
     background-color: var(--color-blue);
     color: var(--color-beige);
+    transition: all 0.35s calc(var(--index) * 0.05s) ease-out;
   }
 }
 
 #target-2:hover {
   span {
-    animation: anim-color 1s calc(var(--index) * 0.05s) ease-in-out forwards;
+    background-color: var(--color-beige);
+    color: var(--color-blue);
+    padding: 4px 8px;
+    margin-inline: 2px;
   }
 }
 
-@keyframes anim-color {
-  0% {
-    background-color: var(--color-blue);
-    color: var(--color-beige);
+#target-3 {
+  line-height: 1;
+  cursor: default;
+  span {
+    transition: all 0.15s ease-in-out;
+    transform-origin: bottom;
+    display: inline-block;
+    font-size: 40px;
   }
-  50% {
-    background-color: var(--color-beige);
-    color: var(--color-blue);
+
+  &:hover > span:not(:hover) {
+    transform: scale(0.8);
+    opacity: 0.5;
   }
-  25%,
-  50%,
-  75% {
-    padding: 4px 8px;
-    margin-inline: 2px;
+
+  & > span:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+#target-4 {
+  span {
+    display: inline-block;
+    transition: all 0.35s ease-out;
+    transform: translateY(40%);
+  }
+
+  & > span:hover {
+    span {
+      transform: rotate(calc(var(--index) * 15deg));
+    }
   }
 }
