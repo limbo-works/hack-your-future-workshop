@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const items = document.querySelectorAll(".target");
-  const splitWords = document.querySelectorAll(".target-words");
+  var items = document.querySelectorAll(".target");
+  var splitWords = document.querySelectorAll(".target-words");
 
+  /**
+   * Splits each word into individual characters.
+   */
   items.forEach((item) => {
-    let index = 0;
+    var index = 0;
+    var text = item.textContent;
 
-    const text = item.textContent;
     item.innerHTML = text
       .split(" ")
       .map((word) => {
@@ -17,10 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
       .join(" ");
   });
 
+  /**
+   * Splits each character into individual characters, taking words into account.
+   */
   splitWords.forEach((item) => {
-    let index = 0;
+    var index = 0;
+    var text = item.textContent;
 
-    const text = item.textContent;
     item.innerHTML = text
       .split(" ")
       .map((char) => `<span style="--index:${index++}">${char}</span>`)
