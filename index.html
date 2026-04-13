@@ -109,28 +109,35 @@
     }
 
     async function loadPages() {
-      try {
-        const response = await fetch("./navigation.json", { cache: "no-cache" });
-        if (!response.ok) {
-          throw new Error("Could not load navigation.json");
-        }
+    try {
+      const response = await fetch("./navigation.json", { cache: "no-cache" });
+      if (!response.ok) {
+        throw new Error("Could not load navigation.json");
+      }
 
-        const pages = await response.json();
-        if (!Array.isArray(pages)) {
-          throw new Error("navigation.json must contain an array");
-        }
+    const pages = await response.json();
+    if (!Array.isArray(pages)) {
+      throw new Error("navigation.json must contain an array");
+    }
 
-        listEl.innerHTML = "";
-        pages.forEach((path) => {
-          const item = document.createElement("li");
-          const link = document.createElement("a");
-          link.href = path;
-          link.textContent = formatLabel(path);
-          item.appendChild(link);
-          listEl.appendChild(item);
-        });
+    const seenLabels = new Set();
+    listEl.innerHTML = "";
+    pages.forEach((path) => {
+      const label = formatLabel(path);
+      if (seenLabels.has(label)) {
+        return;
+      }
+      seenLabels.add(label);
+      
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = path;
+      link.textContent = label;
+      item.appendChild(link);
+      listEl.appendChild(item);
+    });
 
-        statusEl.textContent = `${pages.length} page(s) found in navigation.json`;
+      statusEl.remove();
       } catch (error) {
         statusEl.textContent = "Failed to load pages";
         statusEl.className = "error";

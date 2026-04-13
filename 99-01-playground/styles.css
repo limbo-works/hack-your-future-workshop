@@ -1,0 +1,31 @@
+.target {
+  width: 256px;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  background-image: url(https://images.unsplash.com/photo-1716125583397-e7cc7469c3f2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+
+  transform: perspective(500px) translate3d(0, 0, 0)
+    rotate3d(calc(var(--py) * -1), var(--px), 0, calc(30deg * var(--d)));
+}
+
+.target:before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    calc(var(--px) * 15deg + 180deg),
+    rgba(255, 255, 255, 0) calc(((var(--py) + 1) / 2) * 100% - 40%),
+    rgba(255, 255, 255, 0.8) calc(((var(--py) + 1) / 2) * 100%),
+    rgba(255, 255, 255, 0) calc(((var(--py) + 1) / 2) * 100% + 40%)
+  );
+
+  mix-blend-mode: soft-light;
+}
