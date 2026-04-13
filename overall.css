@@ -37,11 +37,15 @@ body > header > div {
 
 body > header > a {
   margin-top: 8px;
-  width: 132px;
-  aspect-ratio: 132 / 26;
+  width: fit-content;
+  max-width: 50%;
+  padding-right: 48px;
   background-image: url(./next.svg);
   background-position: right;
   background-repeat: no-repeat;
+}
+body > header > a:hover {
+  text-decoration: underline;
 }
 
 .logo-visible path {
