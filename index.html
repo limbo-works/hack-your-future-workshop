@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workshop Overview</title>
+  <script src="./overall.js" defer></script>
+  <link rel="stylesheet" href="./overall.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    main {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      padding: 140px 0 64px;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      row-gap: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 44px;
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin: 0;
+      opacity: 0.7;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      width: 100%;
+      max-width: 680px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
+
+    li a {
+      display: block;
+      padding: 12px 14px;
+      text-decoration: none;
+      color: var(--color-beige);
+      border: 1px solid rgba(242, 206, 207, 0.45);
+      border-radius: 6px;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    li a:hover {
+      background: rgba(242, 206, 207, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .error {
+      opacity: 1;
+      color: #ffb0b2;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        width: 100%;
+        padding: 120px 24px 40px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="navigation-header"></header>
+
+  <main>
+    <section>
+      <h1>Workshop Pages</h1>
+      <p id="status">Loading pages...</p>
+      <ul id="page-list"></ul>
+    </section>
+  </main>
+
+  <script>
+    const statusEl = document.getElementById("status");
+    const listEl = document.getElementById("page-list");
+
+    function formatLabel(path) {
+      const cleanPath = String(path).replace(/^\//, "");
+      const withoutNumbering = cleanPath.replace(/^\d+(?:-\d+)*-/, "");
+
+      return withoutNumbering
+        .replace(/[-_]+/g, " ")
+        .replace(/\b\w/g, (char) => char.toUpperCase());
+    }
+
+    async function loadPages() {
+      try {
+        const response = await fetch("./navigation.json", { cache: "no-cache" });
+        if (!response.ok) {
+          throw new Error("Could not load navigation.json");
+        }
+
+        const pages = await response.json();
+        if (!Array.isArray(pages)) {
+          throw new Error("navigation.json must contain an array");
+        }
+
+        listEl.innerHTML = "";
+        pages.forEach((path) => {
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = path;
+          link.textContent = formatLabel(path);
+          item.appendChild(link);
+          listEl.appendChild(item);
+        });
+
+        statusEl.textContent = `${pages.length} page(s) found in navigation.json`;
+      } catch (error) {
+        statusEl.textContent = "Failed to load pages";
+        statusEl.className = "error";
+      }
+    }
+
+    loadPages();
+  </script>
+</body>
+</html>

@@ -1,5 +1,12 @@
 [
-    "/0-1-intro",
-    "/1-1-clippath",
-    "/7-1-cssvariables-mouse"
+    "/00-01-intro",
+    "/01-01-clippath",
+    "/01-02-clippath",
+    "/02-01-css-filters",
+    "/09-01-css-perspective",
+    "/09-02-css-perspective",
+    "/06-01-svg-stroke",
+    "/06-02-svg-stroke",
+    "/06-03-svg-stroke",
+    "/06-04-svg-stroke"
 ]
