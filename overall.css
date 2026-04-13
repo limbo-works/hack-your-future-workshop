@@ -30,9 +30,15 @@ body > header {
 }
 
 body > header > div {
+  position: relative;
   width: 132px;
   aspect-ratio: 132 / 49;
-  background-image: url(./logo.svg);
+
+  > a {
+    position: absolute;
+    inset: 0px;
+    background-image: url(./logo.svg);
+  }
 }
 
 body > header > a {
@@ -43,6 +49,7 @@ body > header > a {
   background-image: url(./next.svg);
   background-position: right;
   background-repeat: no-repeat;
+  color: var(--color-beige);
 }
 body > header > a:hover {
   text-decoration: underline;

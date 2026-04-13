@@ -104,8 +104,12 @@ async function renderHeaderNavigation() {
 
 		navigationHeader.replaceChildren();
 
-		const spacer = document.createElement("div");
-		navigationHeader.appendChild(spacer);
+        const logoDiv = document.createElement("div");
+        const logoLink = document.createElement("a");
+        logoLink.href = "/";
+        logoLink.setAttribute("aria-label", "Overview");
+        logoDiv.appendChild(logoLink);
+        navigationHeader.appendChild(logoDiv);
 
 		const nextLink = createNavLink(nextItem);
 
