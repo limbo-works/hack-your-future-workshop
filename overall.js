@@ -45,7 +45,7 @@ function formatLabelFromPath(value) {
 	if (!key) return "";
 
 	const leaf = key.split("/").filter(Boolean).pop() || key;
-	const withoutPrefix = leaf.replace(/^\d+(?:-\d+)*-/, "");
+	const withoutPrefix = leaf.replace(/-\d+$/, "");
 
 	return withoutPrefix
 		.replace(/[-_]+/g, " ")

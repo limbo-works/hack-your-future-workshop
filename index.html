@@ -101,7 +101,7 @@
 
     function formatLabel(path) {
       const cleanPath = String(path).replace(/^\//, "");
-      const withoutNumbering = cleanPath.replace(/^\d+(?:-\d+)*-/, "");
+      const withoutNumbering = cleanPath.replace(/-\d+$/, "");
 
       return withoutNumbering
         .replace(/[-_]+/g, " ")
@@ -128,7 +128,7 @@
         return;
       }
       seenLabels.add(label);
-      
+
       const item = document.createElement("li");
       const link = document.createElement("a");
       link.href = path;
