@@ -10,41 +10,83 @@
   <body>
     <header id="navigation-header"></header>
 
-    <div
-      class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-cols-4 gap-x-[12px] gap-y-[24px] p-[12px] w-[65vw]"
-    >
-      <div id="target-1" class="target">
-        <p class="text-center">blur(3px)</p>
-        <div class="inner"></div>
-      </div>
-      <div id="target-2" class="target">
-        <p class="text-center">contrast(200%)</p>
-        <div class="inner"></div>
-      </div>
-      <div id="target-3" class="target">
-        <p class="text-center">grayscale(100%)</p>
-        <div class="inner"></div>
-      </div>
-      <div id="target-4" class="target">
-        <p class="text-center">invert(100%)</p>
-        <div class="inner"></div>
-      </div>
-      <div id="target-5" class="target">
-        <p class="text-center">drop-shadow(-8px 8px 4px var(--color-beige))</p>
-        <div class="inner"></div>
-      </div>
-      <div id="target-6" class="target">
-        <p class="text-center">sepia(100%)</p>
-        <div class="inner"></div>
-      </div>
-      <div id="target-7" class="target">
-        <p class="text-center">saturate(200%)</p>
-        <div class="inner"></div>
-      </div>
-      <div id="target-8" class="target">
-        <p class="text-center">hue-rotate(0.25turn)</p>
-        <div class="inner"></div>
-      </div>
+    <div class="my-24 flex gap-x-[12px] items-start">
+        <div
+            class="sticky top-0 grid grid-cols-4 gap-x-[12px] gap-y-[24px] p-[12px] w-[65vw]"
+        >
+            <div id="target-1" class="target">
+                <p class="text-center">blur</p>
+                <div id="blur" class="inner"></div>
+            </div>
+            <div id="target-2" class="target">
+                <p class="text-center">contrast</p>
+                <div id="contrast" class="inner"></div>
+            </div>
+            <div id="target-3" class="target">
+                <p class="text-center">grayscale</p>
+                <div id="grayscale" class="inner"></div>
+            </div>
+            <div id="target-4" class="target">
+                <p class="text-center">invert</p>
+                <div id="invert" class="inner"></div>
+            </div>
+            <div id="target-5" class="target">
+                <p class="text-center">drop-shadow</p>
+                <div id="drop-shadow" class="inner"></div>
+            </div>
+            <div id="target-6" class="target">
+                <p class="text-center">sepia</p>
+                <div id="sepia" class="inner"></div>
+            </div>
+            <div id="target-7" class="target">
+                <p class="text-center">saturate</p>
+                <div id="saturate" class="inner"></div>
+            </div>
+            <div id="target-8" class="target">
+                <p class="text-center">hue-rotate</p>
+                <div id="hue-rotate" class="inner"></div>
+            </div>
+        </div>
+
+        <!-- Editor -->
+        <div class="w-[calc(100%-65vw-12px)] col-span-full">
+            <p class="mb-2">CSS</p>
+            <style
+                contenteditable="plaintext-only"
+                class="w-full whitespace-pre overflow-x-auto"
+            >#blur {
+    filter: blur(3px);
+}
+
+#contrast {
+    filter: contrast(200%);
+}
+
+#grayscale {
+    filter: grayscale(100%);
+}
+
+#invert {
+    filter: invert(100%);
+}
+
+#drop-shadow {
+    /* parameters include: x, y blur solidity, color */
+    filter: drop-shadow(-8px 8px 4px var(--color-beige));
+}
+
+#sepia {
+    filter: sepia(100%);
+}
+
+#saturate {
+    filter: saturate(200%);
+}
+
+#hue-rotate {
+    filter: hue-rotate(0.25turn);
+}</style>
+        </div>
     </div>
   </body>
 </html>
