@@ -10,13 +10,23 @@
   <body>
     <header id="navigation-header"></header>
 
-    <div
-      class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-[64px]"
-    >
-      <div class="target"></div>
-      <div class="target"></div>
-      <div class="target"></div>
-      <div class="target"></div>
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div
+            class="flex gap-[64px]"
+        >
+            <div class="target"></div>
+            <div class="target"></div>
+            <div class="target"></div>
+            <div id="interactive" class="target"></div>
+        </div>
+
+        <style
+                contenteditable="plaintext-only"
+                class="mt-2 w-full whitespace-pre overflow-auto"
+            >#interactive {
+    /* rotate3d(x, y, z, a) */
+    transform: perspective(350px) rotate3d(0.5, 1, 0, 45deg);
+}</style>
     </div>
   </body>
 </html>

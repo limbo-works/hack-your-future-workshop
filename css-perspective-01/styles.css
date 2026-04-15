@@ -16,5 +16,5 @@
 }
 
 .target:nth-child(4) {
-  transform: perspective(350px) rotate3d(0.5, 1, 0, 45deg);
+  /* transform: perspective(350px) rotate3d(0.5, 1, 0, 45deg); */
 }

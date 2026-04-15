@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="../overall.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
+
+    <!--
+        Important notes!
+        - CSS filters can be chained together and the order of the filters matters!
+        - CSS filters can be animated and transitioned!
+        - An element with a filter can be wrapped by another element with a different filter to create more complex effects!
+        - Same filters can be applied with backdrop-filter to affect the background of an element instead of the element itself!
+    -->
+
   <body>
     <header id="navigation-header"></header>
 
@@ -48,6 +57,9 @@
             </div>
         </div>
 
+        <!-- Target this to apply a backdrop filter! -->
+        <div id="overlay" class="fixed inset-0 pointer-events-none"></div>
+
         <!-- Editor -->
         <div class="w-[calc(100%-65vw-12px)] col-span-full">
             <p class="mb-2">CSS</p>
@@ -85,6 +97,10 @@
 
 #hue-rotate {
     filter: hue-rotate(0.25turn);
+}
+
+#overlay {
+    /* backdrop-filter: blur(6px) brightness(0.8); */
 }</style>
         </div>
     </div>

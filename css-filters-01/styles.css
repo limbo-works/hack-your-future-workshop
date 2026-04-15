@@ -13,3 +13,11 @@
     margin-bottom: 8px;
     text-align: center;
 }
+
+.target .inner {
+    transition: filter 0.3s ease;
+}
+.target .inner:hover {
+    filter: none !important;
+    cursor: not-allowed;
+}
