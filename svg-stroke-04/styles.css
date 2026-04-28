@@ -1,43 +1,50 @@
-.icon:hover .animation-layer {
-    opacity: 1;
-    animation: dash 0.5s ease-in-out forwards;
-}
-.icon:hover .animation-out-layer {
-    opacity: 1;
-    animation: dash-2 0.5s ease-in-out forwards;
-}
-
-.icon .animation-layer {
-    stroke: #6c98ee;
-    animation: dash-out 0.5s ease-in-out forwards;
-}
-.icon .animation-out-layer {
-    opacity: 1;
-    transition: all;
-    transition-delay: 0s;
-    animation: dash-2-out 0.5s ease-in-out forwards;
+.drawing-path {
+  /* Set dasharray to 1 (full length thanks to pathLength="1") */
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  
+  animation: draw linear both;
+  animation-timeline: scroll(root);
 }
 
-@keyframes dash {
-    to {
-        stroke-dashoffset: 0;
-    }
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
-@keyframes dash-out {
-    from {
-        stroke-dashoffset: 0;
-    }
+.box {
+  width: 280px;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(242, 206, 207, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 20;
 }
 
-@keyframes dash-2 {
-    to {
-        stroke-dashoffset: 0;
-    }
+.box h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
-@keyframes dash-2-out {
-    from {
-        stroke-dashoffset: 0;
-    }
+.box p {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+/* Align boxes to match the SVG path peaks (roughly 20% and 80%) */
+.box-left {
+  align-self: flex-start;
+  margin-left: 5%; 
+}
+
+.box-right {
+  align-self: flex-end;
+  margin-right: 5%;
 }

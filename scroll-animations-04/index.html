@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Scroll Animations 02</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../overall.js" defer></script>
+        <link rel="stylesheet" href="../overall.css" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="scripts.js" defer></script>
+    </head>
+    <body>
+        <header id="navigation-header"></header>
+
+        <main class="stack-main">
+            <section class="stack-hero">
+                <h1>Stacking cards on scroll</h1>
+                <p>
+                    Each card sticks at the top of the page. A staggered
+                    <code>padding-top</code> makes the older ones peek out from
+                    behind the newer ones. A <code>view-timeline</code> on the
+                    wrapper drives a <code>scale</code> animation, so older
+                    cards visually recede as you scroll past. This uses
+                    exit-crossing, which is when an element's leading edge
+                    leaves the viewport.
+                </p>
+            </section>
+
+            <section class="stack-lesson">
+                <h2>The whole trick</h2>
+                <p>
+                    Two layered ideas: sticky cards with a cascading peek, plus
+                    one shared timeline that scales each card during its slice
+                    of the exit phase.
+                </p>
+                <style
+                    contenteditable="plaintext-only"
+                    class="w-full whitespace-pre overflow-x-auto mt-6"
+                >
+                    #cards {
+                        --numcards: 4;
+                        --card-top-offset: 1.5em;
+                        view-timeline-name: --cards;
+                        padding-bottom: calc(
+                            var(--numcards) * var(--card-top-offset)
+                        );
+                    }
+
+                    .card {
+                        position: sticky;
+                        top: 0;
+                        padding-top: calc(
+                            var(--index) * var(--card-top-offset)
+                        );
+                    }
+
+                    .card__content {
+                        transform-origin: 50% 0%;
+                        animation: scale linear forwards;
+                        animation-timeline: --cards;
+                        animation-range: exit-crossing
+                            calc((var(--index) - 1) / var(--numcards) * 100%)
+                            exit-crossing
+                            calc(var(--index) / var(--numcards) * 100%);
+                    }
+
+                    @keyframes scale {
+                        to {
+                            transform: scale(
+                                calc(
+                                    1.1 - 0.1 *
+                                        (var(--numcards) - var(--index) + 1)
+                                )
+                            );
+                        }
+                    }
+                </style>
+            </section>
+
+            <ul id="cards">
+                <li class="card" id="card_1" style="--index: 1">
+                    <div class="card__content">
+                        <span class="card__num">01</span>
+                        <h3>Discover</h3>
+                        <p>
+                            The first card glides up and locks at the top of the
+                            viewport.
+                        </p>
+                    </div>
+                </li>
+                <li class="card" id="card_2" style="--index: 2">
+                    <div class="card__content">
+                        <span class="card__num">02</span>
+                        <h3>Design</h3>
+                        <p>
+                            Card two stacks on top, leaving a sliver of card one
+                            peeking out.
+                        </p>
+                    </div>
+                </li>
+                <li class="card" id="card_3" style="--index: 3">
+                    <div class="card__content">
+                        <span class="card__num">03</span>
+                        <h3>Build</h3>
+                        <p>
+                            Card three lands. Older cards shrink to push
+                            themselves into the back.
+                        </p>
+                    </div>
+                </li>
+                <li class="card" id="card_4" style="--index: 4">
+                    <div class="card__content">
+                        <span class="card__num">04</span>
+                        <h3>Ship</h3>
+                        <p>
+                            All four are stacked. Keep scrolling — the page
+                            resumes.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            <section class="stack-outro">
+                <p>Once the wrapper scrolls past, the stack releases.</p>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Variable Fonts 04 - Wave</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../overall.js" defer></script>
+        <link rel="stylesheet" href="../overall.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,GRAD,slnt@8..144,25..151,100..1000,-200..150,-10..0&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="navigation-header"></header>
+
+        <div class="vf-container">
+            <section class="vf-section">
+                <h1>Per-letter Wave</h1>
+                <div class="vf-demo vf-demo--wave">
+                    <span style="--i: 0">H</span><span style="--i: 1">a</span
+                    ><span style="--i: 2">c</span><span style="--i: 3">k</span
+                    ><span style="--i: 4">&nbsp;</span
+                    ><span style="--i: 5">Y</span><span style="--i: 6">o</span
+                    ><span style="--i: 7">u</span><span style="--i: 8">r</span
+                    ><span style="--i: 9">&nbsp;</span
+                    ><span style="--i: 10">F</span><span style="--i: 11">u</span
+                    ><span style="--i: 12">t</span><span style="--i: 13">u</span
+                    ><span style="--i: 14">r</span
+                    ><span style="--i: 15">e</span>
+                </div>
+
+                <style
+                    contenteditable="plaintext-only"
+                    class="w-full whitespace-pre overflow-x-auto mt-8 bg-black/30 p-4 rounded-md font-mono text-sm border border-white/10 text-[#f2cecf] outline-none"
+                >
+                    @property --wght {
+                        syntax: "<number>";
+                        inherits: true;
+                        initial-value: 400;
+                    }
+
+                    .vf-demo--wave {
+                        font-family: "Roboto Flex", sans-serif;
+                        font-size: 72px;
+                    }
+
+                    .vf-demo--wave span {
+                        display: inline-block;
+                        white-space: pre;
+                        --wght: 100;
+                        font-variation-settings: "wght" var(--wght);
+                        animation: vf-wave 1.6s infinite ease-in-out;
+                        animation-delay: calc(var(--i) * -0.08s);
+                    }
+
+                    @keyframes vf-wave {
+                        0%,
+                        100% {
+                            --wght: 100;
+                        }
+                        50% {
+                            --wght: 900;
+                        }
+                    }
+                </style>
+            </section>
+        </div>
+    </body>
+</html>

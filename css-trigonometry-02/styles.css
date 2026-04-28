@@ -1,0 +1,149 @@
+/* ---------- Registered animatable angle ---------- */
+@property --t {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+@property --orbit-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ---------- Layout ---------- */
+.trig-main {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 160px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.trig-intro h1,
+.trig-demo h2 {
+  font-size: 40px;
+  line-height: 1.05;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.trig-demo h2 code {
+  font-size: 0.75em;
+  opacity: 0.85;
+}
+
+.trig-intro p,
+.trig-demo p {
+  font-size: 18px;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin: 0 0 12px;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+.trig-code,
+.trig-editable-style {
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 16px 18px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre;
+  overflow-x: auto;
+  margin-top: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f2cecf;
+  outline: none;
+}
+
+.trig-editable-style::before {
+  content: "EDITABLE CSS";
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+
+/* ---------- 1. Circular layout ---------- */
+.trig-clock {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  margin: 60px auto;
+  border: 1px dashed rgba(242, 206, 207, 0.35);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: radial-gradient(circle, rgba(242, 206, 207, 0.1) 0%, transparent 70%);
+  transition: background 0.4s ease;
+}
+
+.trig-clock:hover {
+  background: radial-gradient(circle, rgba(242, 206, 207, 0.2) 0%, transparent 70%);
+}
+
+.trig-clock__hint {
+  position: absolute;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.trig-clock:hover .trig-clock__hint {
+  opacity: 0;
+}
+
+.trig-clock__dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  --angle: calc(var(--i) * (360deg / var(--total)) - 90deg);
+  --current-radius: 0px;
+
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(242, 206, 207, 0.12);
+  border: 1px solid rgba(242, 206, 207, 0.5);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  
+  opacity: 0;
+  scale: 0.5;
+  transition: 
+    translate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.4s ease,
+    scale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: calc(var(--i) * 0.03s);
+
+  translate:
+    calc(cos(var(--angle)) * var(--current-radius))
+    calc(sin(var(--angle)) * var(--current-radius));
+}
+
+.trig-clock:hover .trig-clock__dot {
+  --current-radius: var(--radius);
+  opacity: 1;
+  scale: 1;
+}

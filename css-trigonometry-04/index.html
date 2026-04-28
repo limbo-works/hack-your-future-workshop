@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Trigonometry 04 - atan2() Pointer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../overall.js" defer></script>
+    <link rel="stylesheet" href="../overall.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="navigation-header"></header>
+
+    <main class="trig-main">
+        <section class="trig-intro">
+            <h1>Point at things — <code>atan2()</code></h1>
+            <p>
+                How do you make an arrow point at a specific coordinate? 
+                <code>atan2(y, x)</code> calculates the angle between the center 
+                and a point. Edit the <code>--target</code> variables below!
+            </p>
+        </section>
+
+        <section class="trig-demo">
+            <div class="trig-pointer-area">
+                <div class="trig-target"></div>
+                <div class="trig-arrow">➜</div>
+            </div>
+
+            <style contenteditable class="trig-editable-style">
+.trig-pointer-area {
+  /* Change these pixel values! */
+  --target-x: 150px;
+  --target-y: -80px;
+}
+
+.trig-arrow {
+  /* This automatically calculates the rotation */
+  rotate: atan2(var(--target-y), var(--target-x));
+}</style>
+        </section>
+    </main>
+</body>
+</html>

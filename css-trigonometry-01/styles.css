@@ -1,0 +1,133 @@
+:root {
+    --angle: 0deg;
+    --radius: 150px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.controls {
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    background: rgba(30, 41, 59, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+}
+
+.control-group {
+    margin: 15px 0;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="range"] {
+    width: 200px;
+}
+
+.math-display {
+    margin-top: 20px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.canvas {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.center-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.circle-path {
+    position: absolute;
+    width: calc(var(--radius) * 2);
+    height: calc(var(--radius) * 2);
+    border: 2px dashed rgba(148, 163, 184, 0.3);
+    border-radius: 50%;
+}
+
+.marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #38bdf8;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #38bdf8;
+    
+    /* The Magic Part */
+    --x: calc(cos(var(--angle)) * var(--radius));
+    --y: calc(sin(var(--angle)) * var(--radius));
+    
+    transform: translate(var(--x), var(--y));
+    z-index: 6;
+}
+
+.radius-line {
+    position: absolute;
+    height: 2px;
+    background: #38bdf8;
+    width: var(--radius);
+    left: 50%;
+    top: 50%;
+    transform-origin: left center;
+    transform: translateY(-50%) rotate(var(--angle));
+    opacity: 0.8;
+    z-index: 4;
+}
+
+.x-line {
+    position: absolute;
+    height: 2px;
+    background: #f43f5e;
+    width: calc(abs(cos(var(--angle)) * var(--radius)));
+    left: 50%;
+    top: 50%;
+    transform-origin: left center;
+    transform: 
+        translateY(-50%) 
+        scaleX(sign(cos(var(--angle))));
+    opacity: 0.5;
+}
+
+.y-line {
+    position: absolute;
+    width: 2px;
+    background: #10b981;
+    height: calc(abs(sin(var(--angle)) * var(--radius)));
+    left: 50%;
+    top: 50%;
+    transform-origin: center top;
+    transform: 
+        translateX(-50%)
+        scaleY(sign(sin(var(--angle))));
+    opacity: 0.5;
+}

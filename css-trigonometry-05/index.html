@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Trigonometry 05 - Interactive Follower</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../overall.js" defer></script>
+    <link rel="stylesheet" href="../overall.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header id="navigation-header"></header>
+
+    <main class="trig-main">
+        <section class="trig-intro">
+            <h1>Interactive Follower</h1>
+            <p>
+                Move your mouse inside the box. JavaScript passes the <code>x</code> 
+                and <code>y</code> coordinates to CSS variables — 
+                <code>atan2()</code> handles the rotation math for each eye.
+            </p>
+        </section>
+
+        <section class="trig-demo">
+            <div class="trig-mouse-area">
+                <div class="trig-eye">
+                    <div class="trig-pupil"></div>
+                </div>
+                <div class="trig-eye">
+                    <div class="trig-pupil"></div>
+                </div>
+            </div>
+
+            <style contenteditable class="trig-editable-style">
+.trig-eye {
+  /* Rotate the entire eye toward the mouse coordinates */
+  rotate: atan2(var(--mouse-y, 0px), var(--mouse-x, 1px));
+}
+
+.trig-pupil {
+  /* Push pupil from center so it orbits when the eye rotates */
+  translate: 20px 0;
+}</style>
+        </section>
+    </main>
+</body>
+</html>

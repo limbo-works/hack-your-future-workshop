@@ -1,0 +1,103 @@
+/* ---------- Layout ---------- */
+.stack-main {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 160px 24px 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stack-hero,
+.stack-lesson {
+  margin-bottom: 60vh;
+}
+
+.stack-hero h1,
+.stack-lesson h2 {
+  font-size: 40px;
+  line-height: 1.05;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.stack-hero p,
+.stack-lesson p,
+.stack-outro p {
+  font-size: 18px;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin: 0 0 12px;
+}
+
+.stack-hint {
+  margin-top: 32px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.stack-outro {
+  margin-top: 60vh;
+  text-align: center;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+/* ---------- The stack ---------- */
+#cards {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+
+  /* Explicit row sizing — each card occupies one row of --card-height. */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(var(--numcards, 4), 70vh);
+  gap: 4vh;
+}
+
+.card__content {
+  /* The visual styling — the sticky behaviour, animation, and keyframes
+     all live in the editable <style> tag in index.html. */
+  height: 100%;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: start;
+  gap: 8px 24px;
+  padding: 32px 36px;
+  border-radius: 14px;
+
+  background: hsl(calc(358 - (var(--index) - 1) * 4) 65% calc(86% - (var(--index) - 1) * 7%));
+  color: var(--color-blue);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
+}
+
+.card__num {
+  grid-row: 1 / span 2;
+  font-size: 44px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0.55;
+}
+
+.card__content h3 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: -0.005em;
+}
+
+.card__content p {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.8;
+}

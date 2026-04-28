@@ -1,0 +1,68 @@
+@property --t {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+:root {
+  --color-beige: #f2cecf;
+}
+
+.trig-main {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 160px 24px;
+}
+
+.trig-intro h1 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.trig-intro p {
+  font-size: 18px;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.trig-editable-style {
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  border-radius: 6px;
+  font-family: monospace;
+  white-space: pre;
+  margin-top: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-beige);
+}
+
+.trig-editable-style::before {
+  content: "EDITABLE CSS";
+  display: block;
+  font-size: 10px;
+  opacity: 0.5;
+  margin-bottom: 8px;
+}
+
+.trig-wave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  animation: trig-spin 4s linear infinite;
+}
+
+@keyframes trig-spin {
+  to { --t: 1turn; }
+}
+
+.trig-wave__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-beige);
+}

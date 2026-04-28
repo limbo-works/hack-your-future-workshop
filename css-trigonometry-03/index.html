@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Trigonometry 03 - Sine Wave</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../overall.js" defer></script>
+    <link rel="stylesheet" href="../overall.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="navigation-header"></header>
+
+    <main class="trig-main">
+        <section class="trig-intro">
+            <h1>Sine Wave Animation</h1>
+            <p>
+                Using <code>sin()</code> with an animated CSS variable (<code>--t</code>)
+                creates smooth, organic motion without any JavaScript frame-loops.
+            </p>
+        </section>
+
+        <section class="trig-demo">
+            <div class="trig-wave">
+                <div class="trig-wave__dot" style="--i: 0"></div>
+                <div class="trig-wave__dot" style="--i: 1"></div>
+                <div class="trig-wave__dot" style="--i: 2"></div>
+                <div class="trig-wave__dot" style="--i: 3"></div>
+                <div class="trig-wave__dot" style="--i: 4"></div>
+                <div class="trig-wave__dot" style="--i: 5"></div>
+                <div class="trig-wave__dot" style="--i: 6"></div>
+                <div class="trig-wave__dot" style="--i: 7"></div>
+                <div class="trig-wave__dot" style="--i: 8"></div>
+                <div class="trig-wave__dot" style="--i: 9"></div>
+                <div class="trig-wave__dot" style="--i: 10"></div>
+                <div class="trig-wave__dot" style="--i: 11"></div>
+                <div class="trig-wave__dot" style="--i: 12"></div>
+                <div class="trig-wave__dot" style="--i: 13"></div>
+                <div class="trig-wave__dot" style="--i: 14"></div>
+                <div class="trig-wave__dot" style="--i: 15"></div>
+            </div>
+
+            <style contenteditable class="trig-editable-style">
+.trig-wave__dot {
+  --phase: calc(var(--i) * 30deg);
+  translate: 0 calc(sin(var(--t) + var(--phase)) * 40px);
+}</style>
+        </section>
+    </main>
+</body>
+</html>

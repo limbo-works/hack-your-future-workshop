@@ -1,0 +1,73 @@
+:root {
+    --color-beige: #f2cecf;
+}
+
+.trig-main {
+    width: min(720px, 100%);
+    margin: 0 auto;
+    padding: 160px 24px;
+}
+
+.trig-intro h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.trig-intro p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+.trig-editable-style {
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    border-radius: 6px;
+    font-family: monospace;
+    white-space: pre;
+    margin-top: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-beige);
+}
+
+.trig-editable-style::before {
+    content: "EDITABLE CSS";
+    display: block;
+    font-size: 10px;
+    opacity: 0.5;
+    margin-bottom: 8px;
+}
+
+.trig-pointer-area {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    --target-x: 150px;
+    --target-y: -80px;
+}
+
+.trig-target {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #f43f5e;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #f43f5e;
+    translate: var(--target-x) var(--target-y);
+}
+
+.trig-arrow {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    transition: rotate 0.3s ease;
+}

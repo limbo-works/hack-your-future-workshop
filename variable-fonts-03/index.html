@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Variable Fonts 03 - Loop</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../overall.js" defer></script>
+        <link rel="stylesheet" href="../overall.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,GRAD,slnt@8..144,25..151,100..1000,-200..150,-10..0&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="navigation-header"></header>
+
+        <div class="vf-container">
+            <section class="vf-section">
+                <h1>Looping Keyframes</h1>
+                <div class="vf-demo vf-demo--loop">Variable</div>
+
+                <style
+                    contenteditable="plaintext-only"
+                    class="w-full whitespace-pre overflow-x-auto mt-8 bg-black/30 p-4 rounded-md font-mono text-sm border border-white/10 text-[#f2cecf] outline-none"
+                >
+                    @property --wght {
+                        syntax: "<number>";
+                        inherits: true;
+                        initial-value: 400;
+                    }
+
+                    @property --wdth {
+                        syntax: "<number>";
+                        inherits: true;
+                        initial-value: 100;
+                    }
+
+                    .vf-demo--loop {
+                        font-family: "Roboto Flex", sans-serif;
+                        font-size: 80px;
+                        animation: vf-loop 4s infinite
+                            cubic-bezier(0.83, 0, 0.17, 1);
+                        font-variation-settings:
+                            "wght" var(--wght),
+                            "wdth" var(--wdth);
+                    }
+
+                    @keyframes vf-loop {
+                        0%,
+                        100% {
+                            --wght: 100;
+                            --wdth: 25;
+                        }
+                        50% {
+                            --wght: 1000;
+                            --wdth: 151;
+                        }
+                    }
+                </style>
+            </section>
+        </div>
+    </body>
+</html>
