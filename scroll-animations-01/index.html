@@ -1,14 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>Scroll Animations 01</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../overall.js" defer></script>
-    <link rel="stylesheet" href="../overall.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="scripts.js"></script>
-  </head>
-  <body>
-    <header id="navigation-header"></header>
-  </body>
+    <head>
+        <title>Scroll Animations 01 - Page Progress</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../overall.js" defer></script>
+        <link rel="stylesheet" href="../overall.css" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="navigation-header"></header>
+
+        <div class="scroll-progress" aria-hidden="true"></div>
+
+        <main class="sa-main">
+            <section class="sa-hero">
+                <h1>Scroll-driven animations</h1>
+                <p>
+                    The <code>scroll()</code> primitive lets you tie any animation to the overall scroll progress of a container (in this case, the root page).
+                </p>
+            </section>
+
+            <section class="sa-section">
+                <h2>Page Progress Bar</h2>
+                <p>
+                    The thin bar at the very top of the window is driven by
+                    <code>animation-timeline: scroll(root block)</code>. As the
+                    page scrolls from top to bottom, the bar fills from 0% to
+                    100%.
+                </p>
+
+                <style
+                    contenteditable="plaintext-only"
+                    class="block bg-black/30 p-4 rounded-md font-mono text-sm whitespace-pre overflow-x-auto mt-6 border border-white/10 text-[#f2cecf] outline-none"
+                >
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: var(--color-beige);
+  transform-origin: 0 50%;
+  z-index: 100;
+  
+  /* Link to scroll timeline */
+  animation: grow linear;
+  animation-timeline: scroll(root block);
+}
+
+@keyframes grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}</style>
+            </section>
+            
+            <!-- Filler to enable scrolling -->
+            <div style="height: 200vh"></div>
+            <section class="sa-section">
+                <p>Keep scrolling... the bar at the top follows you!</p>
+            </section>
+            <div style="height: 100vh"></div>
+        </main>
+    </body>
 </html>

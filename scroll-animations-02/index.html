@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Scroll Animations 02 - View Timeline</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../overall.js" defer></script>
+        <link rel="stylesheet" href="../overall.css" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="navigation-header"></header>
+
+        <main class="sa-main">
+            <section class="sa-hero">
+                <h1>Element View Timelines</h1>
+                <p>
+                    The <code>view()</code> primitive tracks an element's
+                    visibility as it passes through the viewport.
+                </p>
+            </section>
+
+            <section class="sa-section">
+                <h2>Reveal on entry</h2>
+                <p>
+                    The cards below each have their own timeline tied to
+                    <em>their own</em> position in the viewport. They fade up as
+                    they enter and settle once they're in view.
+                </p>
+                <style
+                    contenteditable="plaintext-only"
+                    class="block bg-black/30 p-4 rounded-md font-mono text-sm whitespace-pre overflow-x-auto mt-6 border border-white/10 text-[#f2cecf] outline-none"
+                >
+                    .sa-card {
+                        /* Tracks this specific element in viewport */
+                        animation: reveal linear both;
+                        animation-timeline: view();
+
+                        /* Start animation when 0% of element is in, 
+     finish when 40% of viewport is covered */
+                        animation-range: entry 0% cover 40%;
+                    }
+
+                    @keyframes reveal {
+                        from {
+                            opacity: 0;
+                            translate: 0 40px;
+                            filter: blur(4px);
+                        }
+                        to {
+                            opacity: 1;
+                            translate: 0 0;
+                            filter: blur(0);
+                        }
+                    }
+                </style>
+
+                <div class="sa-cards">
+                    <article class="sa-card">
+                        <span>01</span>
+                        <h3>Reveal on entry</h3>
+                        <p>No IntersectionObserver. No JS. Pure CSS.</p>
+                    </article>
+                    <article class="sa-card">
+                        <span>02</span>
+                        <h3>Each card has its own timeline</h3>
+                        <p>Every element tracks its own viewport progress.</p>
+                    </article>
+                    <article class="sa-card">
+                        <span>03</span>
+                        <h3>Range syntax</h3>
+                        <p>
+                            <code>entry</code>, <code>exit</code>,
+                            <code>cover</code>, <code>contain</code>.
+                        </p>
+                    </article>
+                    <article class="sa-card">
+                        <span>04</span>
+                        <h3>Composable</h3>
+                        <p>Combine with transforms, filters, colours.</p>
+                    </article>
+                    <article class="sa-card">
+                        <span>05</span>
+                        <h3>Progressive</h3>
+                        <p>
+                            Wrap in <code>@supports</code> for older browsers.
+                        </p>
+                    </article>
+                    <article class="sa-card">
+                        <span>06</span>
+                        <h3>Try it</h3>
+                        <p>
+                            Open DevTools and tweak
+                            <code>animation-range</code>.
+                        </p>
+                    </article>
+                    <div style="height: 400px"></div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

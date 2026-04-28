@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>CSS Trigonometry 01</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Trigonometry Demo (sin, cos)</title>
     <script src="../overall.js" defer></script>
-    <link rel="stylesheet" href="../overall.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="scripts.js"></script>
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../overall.css">
+</head>
+<body>
     <header id="navigation-header"></header>
-  </body>
+    <div class="controls">
+        <h1>CSS Trigonometry</h1>
+        <div class="control-group">
+            <label for="angle">Angle: <span id="angle-val">0</span>deg</label>
+            <input type="range" id="angle" min="0" max="360" value="0">
+        </div>
+        <div class="control-group">
+            <label for="radius">Radius: <span id="radius-val">150</span>px</label>
+            <input type="range" id="radius" min="50" max="250" value="150">
+        </div>
+        <div class="math-display">
+            <p>x = cos(<span class="angle-text">0deg</span>) * <span class="radius-text">150px</span></p>
+            <p>y = sin(<span class="angle-text">0deg</span>) * <span class="radius-text">150px</span></p>
+        </div>
+    </div>
+
+    <div class="canvas">
+        <div class="center-point"></div>
+        <div class="circle-path"></div>
+        <div class="marker"></div>
+        <div class="radius-line"></div>
+        <div class="x-line"></div>
+        <div class="y-line"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
 </html>

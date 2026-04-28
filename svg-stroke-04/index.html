@@ -1,61 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Svg Stroke 04</title>
+    <title>Svg Stroke 03 - Curve Around</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../overall.js" defer></script>
     <link rel="stylesheet" href="../overall.css" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
+    <script src="scripts.js" defer></script>
   </head>
   <body>
     <header id="navigation-header"></header>
 
-    <div class="flex justify-center items-center flex-col mt-[20vh]">
-      <h1 class="text-[3em] font-bold">Animate on Hover</h1>
-      <p>How to Animate svg lines on hover.</p>
+    <main class="relative min-h-[400vh] py-[20vh] overflow-hidden">
+      <!-- The SVG that weaves through the boxes -->
+      <svg
+        class="absolute top-0 left-0 w-full h-full pointer-events-none"
+        preserveAspectRatio="none"
+        viewBox="0 0 100 400"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M 50 0 
+             C 50 50, 80 50, 80 100 
+             C 80 150, 20 150, 20 200 
+             C 20 250, 80 250, 80 300 
+             C 80 350, 50 350, 50 400"
+          class="drawing-path"
+          pathLength="1"
+          stroke="var(--color-beige)"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+      </svg>
 
-      <div class="w-[200px] h-[200px]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 113 113"
-          svg-inline=""
-          role="presentation"
-          focusable="false"
-          tabindex="-1"
-          aria-hidden="true"
-          class="icon"
-        >
-          <path
-            fill="none"
-            style="stroke: var(--color-beige)"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M34.2 96.7V68H26l37.8-37.8 37.6 37.6-9 .2v28.7"
-            class="animation-out-layer"
-          ></path>
-          <path
-            fill="none"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M34.2 96.7V68H26l37.8-37.8 37.6 37.6-9 .2v28.7"
-            class="animation-layer"
-          ></path>
-          <path
-            fill="none"
-            style="stroke: var(--color-beige)"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M55.4 96.7V77H72v19.7"
-          ></path>
-          <path
-            style="fill: var(--color-beige)"
-            fill="hsl(239, 16%, 33%)"
-            d="M91.3 50.6l-2-2 .1-18h-12V37l-2-2v-5.4c0-.6.4-1 1-1h14c.3 0 .5.1.7.3.2.2.3.4.3.7l-.1 21z"
-            class="st1"
-          ></path>
-        </svg>
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <h1 class="text-6xl font-bold mb-12 text-center">Weaving Scroll</h1>
+        <p class="text-xl opacity-80 text-center mb-[60vh]">
+          The SVG path below is driven by the scroll progress of the page.
+        </p>
+
+        <div class="flex flex-col gap-[75vh]">
+          <div class="box box-right">
+            <h3>Precision</h3>
+            <p>The line follows the curves perfectly.</p>
+          </div>
+
+          <div class="box box-left">
+            <h3>Responsiveness</h3>
+            <p>Driven by pure CSS scroll timelines.</p>
+          </div>
+
+          <div class="box box-right">
+            <h3>Complexity</h3>
+            <p>Any SVG path can be animated this way.</p>
+          </div>
+        </div>
+        
+        <div class="mt-[60vh] text-center">
+          <p class="text-2xl opacity-60">End of the line.</p>
+        </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

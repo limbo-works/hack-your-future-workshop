@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Variable Fonts 02 - Hover</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../overall.js" defer></script>
+        <link rel="stylesheet" href="../overall.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,GRAD,slnt@8..144,25..151,100..1000,-200..150,-10..0&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="navigation-header"></header>
+
+        <div class="vf-container">
+            <section class="vf-section">
+                <h1>Hover Transition</h1>
+                <div class="vf-demo vf-demo--hover">Hover me</div>
+
+                <style
+                    contenteditable="plaintext-only"
+                    class="w-full whitespace-pre overflow-x-auto mt-8 bg-black/30 p-4 rounded-md font-mono text-sm border border-white/10 text-[#f2cecf] outline-none"
+                >
+                    /* Essential for animating custom props */
+                    @property --wght {
+                        syntax: "<number>";
+                        inherits: true;
+                        initial-value: 400;
+                    }
+
+                    .vf-demo--hover {
+                        font-family: "Roboto Flex", sans-serif;
+                        font-size: 80px;
+                        --wght: 100;
+                        font-variation-settings: "wght" var(--wght);
+                        cursor: pointer;
+                        transition: --wght 1s cubic-bezier(0.83, 0, 0.17, 1);
+                    }
+
+                    .vf-demo--hover:hover {
+                        --wght: 900;
+                    }
+                </style>
+            </section>
+        </div>
+    </body>
+</html>

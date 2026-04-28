@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Scroll Animations 03 - Animation Range</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../overall.js" defer></script>
+        <link rel="stylesheet" href="../overall.css" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="navigation-header"></header>
+
+        <main class="sa-main">
+            <section class="sa-hero">
+                <h1>Animation Ranges</h1>
+                <p>
+                    The <code>animation-range</code> property determines which
+                    part of the view timeline triggers the animation.
+                </p>
+            </section>
+
+            <section class="sa-section">
+                <h2>Fine-tuning with keywords</h2>
+                <p>
+                    Use keywords like <code>entry</code>, <code>exit</code>,
+                    <code>cover</code>, and <code>contain</code> to control when an animation starts and ends.
+                </p>
+
+                <div class="range-examples">
+                    <div class="range-example">
+                        <h3><code>animation-range: cover</code></h3>
+                        <p>Starts as the top enters, finishes as the bottom leaves.</p>
+                        <div class="range-box-container">
+                            <div class="range-box range-cover"></div>
+                        </div>
+                    </div>
+
+                    <div class="range-example">
+                        <h3><code>animation-range: contain</code></h3>
+                        <p>Starts when fully inside, ends when it starts to leave.</p>
+                        <div class="range-box-container">
+                            <div class="range-box range-contain"></div>
+                        </div>
+                    </div>
+
+                    <div class="range-example">
+                        <h3><code>animation-range: entry</code></h3>
+                        <p>Only animates while entering the viewport.</p>
+                        <div class="range-box-container">
+                            <div class="range-box range-entry"></div>
+                        </div>
+                    </div>
+
+                    <div class="range-example">
+                        <h3><code>animation-range: exit</code></h3>
+                        <p>Only animates while leaving the viewport.</p>
+                        <div class="range-box-container">
+                            <div class="range-box range-exit"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <style
+                    contenteditable="plaintext-only"
+                    class="block bg-black/30 p-4 rounded-md font-mono text-sm whitespace-pre overflow-x-auto mt-6 border border-white/10 text-[#f2cecf] outline-none"
+                >
+.range-box {
+  width: 100px;
+  height: 100px;
+  background: var(--color-beige);
+  border-radius: 12px;
+  animation: slide-and-scale linear both;
+  animation-timeline: --example-timeline;
+}
+
+.range-cover   { animation-range: cover; }
+.range-contain { animation-range: contain; }
+.range-entry   { animation-range: entry; }
+.range-exit    { animation-range: exit; }
+
+@keyframes slide-and-scale {
+  from {
+    transform: translateX(-150%) scale(0.5);
+    opacity: 0;
+    border-radius: 50%;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    border-radius: 12px;
+  }
+}</style>
+            </section>
+        </main>
+    </body>
+</html>

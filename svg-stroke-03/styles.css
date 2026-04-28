@@ -1,12 +1,26 @@
-.svg-timeline .animation-layer {
-    stroke: var(--color-blue);
-    animation: dash linear;
-    animation-timeline: scroll();
+.hack-mark {
+    opacity: 0;
+}
+.hack-mark.active {
+    opacity: 1;
+}
+.hack-mark .animation-layer {
+    stroke: var(--color-beige);
+}
+.hack-mark.active .animation-layer {
+    opacity: 1;
+    animation: dash 1.9s ease-in-out forwards;
+}
+
+.hack-mark.active .layer-2.animation-layer {
+    animation-delay: 1.8s;
+}
+.hack-mark .layer-2.animation-layer {
+    animation-delay: 0s;
 }
 
 @keyframes dash {
     to {
-        stroke: var(--color-beige);
         stroke-dashoffset: 0;
     }
 }

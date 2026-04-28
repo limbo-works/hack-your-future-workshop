@@ -1,14 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>Variable Fonts 01</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../overall.js" defer></script>
-    <link rel="stylesheet" href="../overall.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="scripts.js"></script>
-  </head>
-  <body>
-    <header id="navigation-header"></header>
-  </body>
+    <head>
+        <title>Variable Fonts 01</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../overall.js" defer></script>
+        <link rel="stylesheet" href="../overall.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,GRAD,slnt@8..144,25..151,100..1000,-200..150,-10..0&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="scripts.js" defer></script>
+    </head>
+    <body>
+        <header id="navigation-header"></header>
+
+        <div class="vf-container">
+            <section class="vf-section">
+                <h2>1. Variable fonts</h2>
+                <div class="vf-live-demo">Edit my axes</div>
+
+                <style
+                    contenteditable="plaintext-only"
+                    class="w-full whitespace-pre overflow-x-auto"
+                >
+                    .vf-live-demo {
+                        font-variation-settings:
+                            "wght" 700,
+                            "wdth" 120,
+                            "slnt" -10;
+                        color: var(--color-beige);
+                    }
+                </style>
+                <p class="opacity-50 text-sm italic">
+                    Try changing "wght" (100-1000), "wdth" (25-151), or "slnt"
+                    (-10-0) above.
+                </p>
+            </section>
+
+            <section class="vf-section">
+                <h2>2. Interactive Controls</h2>
+                <div class="vf-demo">Variable</div>
+
+                <div class="vf-controls">
+                    <label>
+                        <span class="vf-controls__name">Weight</span>
+                        <input
+                            type="range"
+                            min="100"
+                            max="1000"
+                            step="1"
+                            value="400"
+                            data-axis="wght"
+                        />
+                        <span class="vf-controls__value" data-value-for="wght"
+                            >400</span
+                        >
+                    </label>
+                    <label>
+                        <span class="vf-controls__name">Width</span>
+                        <input
+                            type="range"
+                            min="25"
+                            max="151"
+                            step="1"
+                            value="100"
+                            data-axis="wdth"
+                        />
+                        <span class="vf-controls__value" data-value-for="wdth"
+                            >100</span
+                        >
+                    </label>
+                    <label>
+                        <span class="vf-controls__name">Slant</span>
+                        <input
+                            type="range"
+                            min="-10"
+                            max="0"
+                            step="0.1"
+                            value="0"
+                            data-axis="slnt"
+                        />
+                        <span class="vf-controls__value" data-value-for="slnt"
+                            >0</span
+                        >
+                    </label>
+                </div>
+            </section>
+        </div>
+    </body>
 </html>
