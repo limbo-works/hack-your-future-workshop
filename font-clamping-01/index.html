@@ -10,5 +10,26 @@
   </head>
   <body>
     <header id="navigation-header"></header>
+
+    <section class="justify-self-center mt-32 flex flex-col justify-center items-start gap-8">
+        <h1 class="max-w-[min(80vw,1000px)]">Font clamping! (and clamping in general)</h1>
+
+        <p class="intro max-w-[min(80vw,1000px)]">
+            Clamping is a technique that allows you to set a minimum and maximum value for a property, and the browser will automatically adjust the value based on the available space. This is particularly useful for responsive design, where you want to ensure that your content looks good on all screen sizes without having to write media queries for every possible breakpoint.
+        </p>
+    </section>
+
+    <section class="mt-16 justify-self-center w-[min(80vw,1000px)]">
+        <style
+                contenteditable="plaintext-only"
+                class="w-full whitespace-pre overflow-x-auto"
+        >h1 {
+    font-size: clamp(1.3rem, 3vw, 4rem);
+}
+
+.intro {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}</style>
+    </section>
   </body>
 </html>
