@@ -1,5 +1,5 @@
-<svg width="132" height="49" viewBox="0 0 132 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M37.5 19.5V47.5H1.5V19.5C1.5 9.55887 9.55888 1.5 19.5 1.5C29.4411 1.5 37.5 9.55887 37.5 19.5Z" stroke="#F2CECF" stroke-width="3"/>
+<svg id="logo" width="132" height="49" viewBox="0 0 132 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="clip-path" d="M37.5 19.5V47.5H1.5V19.5C1.5 9.55887 9.55888 1.5 19.5 1.5C29.4411 1.5 37.5 9.55887 37.5 19.5Z" stroke="#F2CECF" stroke-width="3"/>
 <mask id="path-2-inside-1_1489_2" fill="white">
 <rect x="19" y="19" width="20" height="12" rx="1.5"/>
 </mask>

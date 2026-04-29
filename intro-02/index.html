@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro 02</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../overall.js" defer></script>
+    <link rel="stylesheet" href="../overall.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="navigation-header"></header>
+
+    <div
+      class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[64px] pb-[32px]"
+    >
+      <section>
+        <h2 class="flex items-center gap-[0.5em]">
+            Welcome to <a href="https://limbo.works" target="limbo.works">
+                <img src="../logo.svg" width="200" height="200" alt="Limbo" class="mt-[-0.5em]" />
+            </a>
+        </h2>
+      </section>
+
+      <section class="flex">
+        <ul class="list-disc text-start">
+            <li>25+ years in the business!</li>
+            <li>From ideation through design and development to long tail support and hosting</li>
+            <li>What we do:</li>
+        </ul>
+      </section>
+
+      <section class="flex flex-row flex-nowrap gap-4 min-w-[75vw]">
+        <!-- Limbo.works -->
+        <a href="https://limbo.works/" target="limbo.works" class="group relative w-1/2 h-[50vh] overflow-hidden">
+            <img src="assets/limbo-collage.jpg" width="1822" height="3238" alt="Limbo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.1]" />
+        </a>
+
+        <!-- LimboCiti -->
+        <a href="https://limbociti.dk/" target="limbociti" class="group relative w-1/2 h-[50vh] overflow-hidden">
+            <img src="assets/limbo-citi.jpg" width="1165" height="912" alt="Limbo" class="absolute inset-0 w-full h-full object-cover object-[0%_0%] group-hover:scale-[1.1]" />
+        </a>
+      </section>
+    </div>
+  </body>
+</html>

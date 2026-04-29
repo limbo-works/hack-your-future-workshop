@@ -1,4 +1,5 @@
 [
+    "/intro-02",
     "/intro-01",
     "/border-image-01",
     "/variable-fonts-01",
@@ -7,13 +8,14 @@
     "/variable-fonts-04",
     "/clip-path-01",
     "/clip-path-02",
-    "/clip-path-mouse-06",
+    "/clip-path-03",
+    "/clip-path-mouse-01",
+    "/css-filters-01",
     "/svg-filters-01",
     "/svg-filters-02",
     "/svg-filters-03",
     "/svg-filters-04",
     "/svg-filters-05",
-    "/css-filters-01",
     "/css-perspective-01",
     "/css-perspective-02",
     "/svg-masks-01",
@@ -30,5 +32,6 @@
     "/css-trigonometry-02",
     "/css-trigonometry-03",
     "/css-trigonometry-04",
-    "/css-trigonometry-05"
+    "/css-trigonometry-05",
+    "/playground-01"
 ]

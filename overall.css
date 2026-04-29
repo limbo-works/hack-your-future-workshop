@@ -69,3 +69,21 @@ body > header > a:hover {
   background: rgba(0, 0, 0, 0.25);
   color: var(--color-beige);
 }
+style[contenteditable="plaintext-only"]::before {
+  content: "EDITABLE CSS";
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  margin-bottom: 8px;
+  color: #fff;
+}
+script[contenteditable="plaintext-only"]::before {
+  content: "EDITABLE JS";
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  margin-bottom: 8px;
+  color: #fff;
+}
