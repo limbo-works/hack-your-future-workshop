@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Border Image 01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../overall.js" defer></script>
+    <link rel="stylesheet" href="../overall.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <header id="navigation-header"></header>
+
+    <section class="mt-32 flex justify-center items-center gap-8">
+        <div id="target-1" class="target" contenteditable="plaintext-only">We have some content here. The image is stretched to fit the entire area of the element.</div>
+        <span>-></span>
+        <div id="target-2" class="target" contenteditable="plaintext-only">We have some content here. The image is instead used as a border-image to make it more adaptable to the size of the element.</div>
+    </section>
+
+    <section class="mt-16">
+        <style
+                contenteditable="plaintext-only"
+                class="w-full whitespace-pre overflow-x-auto"
+        >#target-1 {
+    background-image: url("./assets/pixel-box.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#target-2 {
+    image-rendering: pixelated;
+    border-image-source: url("./assets/pixel-box.png");
+    border-image-width: 30px;
+    border-image-slice: 10 fill;
+
+    /* source | slice | width | outset | repeat */
+    //background-color: yellow;
+    //border-image: url("./assets/painting-frame.png") 103 106 / 40px 42px / 40px 42px stretch stretch;
+}
+</style>
+    </section>
+  </body>
+</html>

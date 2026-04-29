@@ -1,0 +1,11 @@
+.page-header {
+    margin-top: 150px;
+    padding: 20px;
+    background-image: url("./assets/pixel-box.png");
+    background-repeat: round;
+    color: black;
+
+    h1 {
+        font-size: 3em;
+    }
+}
